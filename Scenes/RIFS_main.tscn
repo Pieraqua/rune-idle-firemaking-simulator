@@ -11,8 +11,6 @@ script = ExtResource("1_3k8y1")
 [node name="PlayerCharacter" parent="." node_paths=PackedStringArray("Inventory") instance=ExtResource("2_82nam")]
 motion_mode = 0
 Inventory = NodePath("../GUI_RIFS")
-SPEED = 300.0
-chopRate = 1
 
 [node name="Tree" parent="." instance=ExtResource("3_kf1j8")]
 position = Vector2(539, 223)

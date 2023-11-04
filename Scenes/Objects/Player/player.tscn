@@ -8,5 +8,3 @@ position = Vector2(6.075, 6.99)
 script = ExtResource("1_ugcb8")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_q8j3p")]
-SPEED = 300.0
-chopRate = 1
