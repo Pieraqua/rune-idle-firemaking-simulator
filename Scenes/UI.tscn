@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhnauah5447kl"]
+
+[ext_resource type="Texture2D" uid="uid://dhob65oklaft8" path="res://PixelArt/Player.png" id="1_cnsvd"]
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="1_s7idh"]
+[ext_resource type="Texture2D" uid="uid://qrg7arko7g6p" path="res://PixelArt/Tree.png" id="2_77kaq"]
+[ext_resource type="Texture2D" uid="uid://c0ydudfitgj4r" path="res://PixelArt/PlayerWithAxe.png" id="3_heaa5"]
+[ext_resource type="Texture2D" uid="uid://mybeengieik4" path="res://PixelArt/placeholderfogo.png" id="5_hihav"]
+
+[node name="UI" type="VSplitContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 54
+script = ExtResource("1_s7idh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IdleZone" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IdleSprite" type="TextureRect" parent="HBoxContainer/IdleZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cnsvd")
+
+[node name="CuttingZone" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TreeSprite" type="TextureRect" parent="HBoxContainer/CuttingZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_77kaq")
+
+[node name="TreeSprite2" type="TextureRect" parent="HBoxContainer/CuttingZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_heaa5")
+
+[node name="FiremakingZone" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TreeSprite" type="TextureRect" parent="HBoxContainer/FiremakingZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hihav")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Inventory" type="VBoxContainer" parent="ColorRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
+layout_mode = 2
+text = "Wood: 0"
+
+[node name="Upgrades" type="VBoxContainer" parent="ColorRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="ColorRect/HBoxContainer2/Upgrades"]
+layout_mode = 2
+text = "Upgrades
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer2/Upgrades"]
+layout_mode = 2
+text = "Iron Axe"
+
+[node name="Label2" type="Label" parent="ColorRect/HBoxContainer2/Upgrades"]
+layout_mode = 2
+text = "Steel axe"
+
+[node name="Stats" type="VBoxContainer" parent="ColorRect/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+layout_mode = 2
+text = "Stats
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+layout_mode = 2
+text = "Trees Cut: 0"
+
+[node name="Label2" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+layout_mode = 2
+text = "Fires lit: 0"
+
+[connection signal="gui_input" from="HBoxContainer/IdleZone" to="." method="_on_idle_clicked"]
+[connection signal="gui_input" from="HBoxContainer/CuttingZone" to="." method="_on_wc_clicked"]
+[connection signal="gui_input" from="HBoxContainer/FiremakingZone" to="." method="_on_firemaking_clicked"]
