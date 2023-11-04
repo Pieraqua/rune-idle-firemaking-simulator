@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brgqc001na66e"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Inventory/ItemDatabase.gd" id="1_s1yxo"]
+[ext_resource type="Script" path="res://Scenes/Objects/Inventory/Item.gd" id="2_87hqp"]
+
+[node name="ItemDatabase" type="Node"]
+script = ExtResource("1_s1yxo")
+
+[node name="Item" type="Node" parent="."]
+script = ExtResource("2_87hqp")

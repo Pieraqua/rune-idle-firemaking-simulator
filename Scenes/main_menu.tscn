@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmo07tt0dho8i"]
+
+[ext_resource type="Script" path="res://Scripts/PlayGame.gd" id="1_4lkc5"]
+[ext_resource type="Texture2D" uid="uid://c0ydudfitgj4r" path="res://PixelArt/PlayerWithAxe.png" id="1_qtley"]
+[ext_resource type="Script" path="res://Scripts/ExitButton.gd" id="2_tresi"]
+[ext_resource type="Texture2D" uid="uid://qrg7arko7g6p" path="res://PixelArt/Tree.png" id="4_llb43"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.5
+offset_top = -48.0
+offset_right = 240.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qtley")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Rune Ironman Firemaking Simulator
+"
+
+[node name="PlayGame" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "PlayGame"
+script = ExtResource("1_4lkc5")
+
+[node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("2_tresi")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_llb43")
+expand_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PlayGame" to="HBoxContainer/VBoxContainer/PlayGame" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Exit" to="HBoxContainer/VBoxContainer/Exit" method="_on_pressed"]
