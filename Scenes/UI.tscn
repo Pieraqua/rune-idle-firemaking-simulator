@@ -111,20 +111,24 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
+[node name="InventoryHeader" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
 layout_mode = 2
 text = "Inventory"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
+[node name="Wood" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
 layout_mode = 2
 text = "Wood: 0"
+
+[node name="Ashes" type="Label" parent="ColorRect/HBoxContainer2/Inventory"]
+layout_mode = 2
+text = "Ashes: 0"
 
 [node name="Upgrades" type="VBoxContainer" parent="ColorRect/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="ColorRect/HBoxContainer2/Upgrades"]
+[node name="UpgradesHeader" type="Label" parent="ColorRect/HBoxContainer2/Upgrades"]
 layout_mode = 2
 text = "Upgrades
 "
@@ -142,17 +146,17 @@ text = "Steel axe"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label3" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+[node name="StatsHeader" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
 layout_mode = 2
 text = "Stats
 "
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+[node name="TreesTotal" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
 layout_mode = 2
 text = "Trees Cut: 0"
 
-[node name="Label2" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
+[node name="FiresTotal" type="Label" parent="ColorRect/HBoxContainer2/Stats"]
 layout_mode = 2
 text = "Fires lit: 0"
 
